@@ -1,0 +1,107 @@
+/* ====== IOS HEADER LIKE STATISTIK ====== */
+
+.page-header{
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 14px;
+  margin: 0 14px;
+  margin-bottom: 14px;
+  background:white;
+  border-radius:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.page-header h2{
+  font-size:16px;
+  font-weight:600;
+  margin:0;
+  color: #2e8b57;
+}
+
+.page-header ion-button{
+  --padding-start:0;
+  --padding-end:0;
+}
+
+.ios-bg{
+  --background:#f2f4f5;
+}
+
+
+/* CONTENT */
+.page-content{
+  --padding-top: 12px;
+}
+
+/* CARD */
+.card-wrap{
+  padding: 14px;
+}
+
+.hama-card{
+  padding: 14px;
+  background: white;
+  border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.head h2{
+  font-size:15px;
+  font-weight:600;
+  margin:0;
+  margin-bottom:4px;
+}
+
+.time{
+  font-size:12px;
+  opacity:.6;
+  display:flex;
+  gap:4px;
+  align-items:center;
+  margin-bottom:6px;
+}
+
+.info{
+  font-size:13px;
+  margin-bottom:3px;
+}
+
+.foto{
+  width:100%;
+  border-radius:12px;
+  margin:8px 0;
+}
+
+.act{
+  text-align:right;
+}
+
+/* EMPTY */
+.empty{
+  margin-top:80px;
+  text-align:center;
+  opacity:.6;
+}
+
+.empty ion-icon{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+/* MODAL IMG */
+.img-holder{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+  background:black;
+}
+
+.img-holder img{
+  width:100%;
+  height:auto;
+}

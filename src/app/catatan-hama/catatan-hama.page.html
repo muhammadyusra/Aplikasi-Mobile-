@@ -1,0 +1,58 @@
+<ion-content class="ios-bg page-content" fullscreen (ionScroll)="onScroll($event)" scrollEvents="true">
+
+  <!-- ==== IOS HEADER ==== -->
+  <div class="page-header glass">
+    <ion-button fill="clear" (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <h2>Catatan Hama</h2>
+    <div class="header-right"></div>
+  </div>
+
+  <!-- LIST CATATAN -->
+  <ng-container *ngIf="catatanHama.length > 0; else emptyState">
+    <div class="card-wrap" *ngFor="let h of catatanHama; let i=index">
+      <article class="hama-card glass-card">
+
+        <div class="head">
+          <h2>{{h.jenis_hama}}</h2>
+          <div class="time">
+            <ion-icon name="calendar-outline"></ion-icon>
+            {{ h.tanggal_pengamatan | date:'dd MMM yyyy, HH:mm' }}
+          </div>
+        </div>
+
+        <div class="info"><b>Lokasi:</b> {{h.lokasi_blok}}</div>
+        <div class="info"><b>Jenis Tanaman:</b> {{h.jenis_tanaman}}</div>
+        <div class="info"><b>Umur Tanaman:</b> {{h.umur_tanaman}} hari</div>
+        <div class="info"><b>Serangan:</b> {{h.tingkat_serangan}}%</div>
+        <div class="info"><b>Gejala:</b> {{h.gejala_serangan}}</div>
+        <div class="info"><b>Catatan:</b> {{h.keterangan}}</div>
+
+        <!-- FOTO -->
+        <img
+          *ngIf="h.foto"
+          [src]="getFullImageUrl(h.foto)"
+          class="foto"
+        />
+
+        <div class="act">
+          <ion-button fill="clear" color="danger" (click)="confirmDelete(h)">
+            <ion-icon name="trash-outline"></ion-icon> Hapus
+          </ion-button>
+        </div>
+
+      </article>
+    </div>
+  </ng-container>
+
+  <!-- STATE KOSONG -->
+  <ng-template #emptyState>
+    <div class="empty">
+      <ion-icon name="document-text-outline"></ion-icon>
+      <p>Belum ada catatan hama</p>
+      <small>Tambah catatan melalui menu Hama</small>
+    </div>
+  </ng-template>
+
+</ion-content>

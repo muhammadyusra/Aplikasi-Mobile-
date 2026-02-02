@@ -1,0 +1,73 @@
+<ion-content fullscreen>
+  <div class="gps-root">
+
+    <!-- MAP -->
+    <div id="map" class="map-area"></div>
+
+    <!-- TOP FLOATING CARD -->
+    <div class="top-card">
+      <div class="top-left">
+        <div class="title">GPS Tracking</div>
+        <div class="subtitle">Pengukuran Lahan</div>
+      </div>
+
+      <div class="top-right">
+        <div class="area-info" *ngIf="area && area > 0">
+          <div class="label">Luas</div>
+          <div class="value">{{ area | number:'1.0-2' }} m²</div>
+          <div class="sub">{{ (area / 10000) | number:'1.4-4' }} ha</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINI CONTROLS -->
+    <div class="mini-controls">
+
+      <!-- MAP LAYER ICON -->
+      <ion-button fill="clear" size="small" (click)="toggleMapLayer()">
+        <ion-icon slot="icon-only" name="globe-outline"></ion-icon>
+      </ion-button>
+
+
+      <!-- ADD POINT -->
+      <ion-button fill="clear" size="small" (click)="addManualPoint()">
+        <ion-icon slot="icon-only" name="pin-outline"></ion-icon>
+      </ion-button>
+
+      <!-- RESET -->
+      <ion-button fill="clear" size="small" (click)="resetDrawing()">
+        <ion-icon slot="icon-only" name="refresh-circle-outline"></ion-icon>
+      </ion-button>
+
+    </div>
+
+    <!-- BOTTOM SHEET (UI SAJA) -->
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-content">
+        <div class="empty">
+        </div>
+      </div>
+    </div>
+
+    <!-- SMALL PILL FABs -->
+    <div class="fabs-small">
+
+      <!-- EXPORT -->
+      <ion-button class="fab-pill-left" (click)="exportPDF()">
+        <ion-icon name="document-text"></ion-icon>
+        Export
+      </ion-button>
+
+      <!-- TRACK -->
+      <ion-button class="fab-pill-right" [ngClass]="tracking ? 'fab-pill-red' : 'fab-pill-green'"
+        (click)="toggleTracking()">
+        <ion-icon [name]="tracking ? 'stop-circle' : 'play-circle'"></ion-icon>
+        {{ tracking ? 'Stop' : 'Track' }}
+      </ion-button>
+
+    </div>
+
+  </div>
+</ion-content>

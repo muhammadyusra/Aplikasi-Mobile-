@@ -1,0 +1,36 @@
+<ion-content class="forgot-container">
+
+  <!-- Tombol Back -->
+  <div class="back-btn-wrapper">
+    <ion-button fill="clear" class="back-btn" (click)="goBack()">
+      <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="header-box">
+    <h2>Lupa Password</h2>
+    <p>Kami akan mengirim link reset password ke email Anda.</p>
+  </div>
+
+  <div class="form-box">
+<ion-item lines="none" class="input-item">
+  <ion-icon name="mail-outline" slot="start"></ion-icon>
+  <ion-input
+    [(ngModel)]="email"
+    placeholder="Email"
+    type="email"
+    inputmode="email"
+    autocomplete="email">
+  </ion-input>
+</ion-item>
+
+    <ion-button
+      expand="block"
+      class="btn-primary"
+      shape="round"
+      (click)="sendResetLink()">
+      Kirim Link Reset
+    </ion-button>
+  </div>
+
+</ion-content>

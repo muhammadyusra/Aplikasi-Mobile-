@@ -1,0 +1,75 @@
+.forgot-container {
+  --background: #f8f9fa;
+  padding: 20px;
+  min-height: 100%;
+  height: auto;
+}
+
+/* Tombol Back */
+.back-btn-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+}
+
+.back-btn {
+  --padding-start: 0;
+  --padding-end: 0;
+  --ripple-color: transparent;
+  width: 40px;
+  height: 40px;
+  --color: #2e7d32;
+}
+
+/* Header */
+.header-box {
+  text-align: center;
+  margin-top: 60px;
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2e7d32;
+  }
+
+  p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: 4px;
+  }
+}
+
+/* Card Form */
+.form-box {
+  background: #fff;
+  padding: 22px;
+  border-radius: 16px;
+  margin-top: 30px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* 🔥 FIX UTAMA INPUT */
+.input-item {
+  --padding-start: 12px;
+  --min-height: 52px;      /* WAJIB */
+  align-items: center;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: #f7f7f7;
+}
+
+/* Biar teks input kelihatan */
+ion-input {
+  font-size: 15px;
+  --padding-start: 8px;
+}
+
+/* Tombol */
+.btn-primary {
+  --background: #27ae60;
+  --background-activated: #1e8449;
+  --border-radius: 12px;
+  height: 48px;
+  font-weight: 600;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "pertanianApp",
+  "type": "angular-standalone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://yusra.perangkatlunak.my.id/backend/api"
+    }
+  ]
+}

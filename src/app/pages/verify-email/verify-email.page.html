@@ -1,0 +1,20 @@
+<ion-content class="verify-container">
+
+  <div class="center-box" *ngIf="status === 'loading'">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Memverifikasi email...</p>
+  </div>
+
+  <div class="center-box success" *ngIf="status === 'success'">
+    <ion-icon name="checkmark-circle-outline"></ion-icon>
+    <h2>Email Berhasil Diverifikasi</h2>
+    <p>Anda akan diarahkan ke halaman login</p>
+  </div>
+
+  <div class="center-box failed" *ngIf="status === 'failed'">
+    <ion-icon name="close-circle-outline"></ion-icon>
+    <h2>Verifikasi Gagal</h2>
+    <p>Token tidak valid atau sudah digunakan</p>
+  </div>
+
+</ion-content>

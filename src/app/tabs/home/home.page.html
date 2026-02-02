@@ -1,0 +1,132 @@
+<ion-content class="ios-bg">
+  <div class="page-container">
+
+    <!-- GREETING -->
+    <section class="greeting animate-fade-in">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+
+          <ion-col size="2.5">
+            <ion-avatar class="profile-avatar">
+              <img [src]="userAvatarUrl" (error)="setHomeAvatarDefault()">
+            </ion-avatar>
+          </ion-col>
+
+          <ion-col size="8" class="greeting-text">
+            <h2>Halo, {{ username }}</h2>
+            <p>Selamat datang di Agricare</p>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </section>
+
+    <!-- WEATHER -->
+    <section *ngIf="weather" class="weather-widget animate-slide-up">
+
+      <div class="weather-top">
+        <div class="weather-left">
+          <h3>{{ weather.name }}</h3>
+          <p class="desc">{{ weatherDescription }}</p>
+          <div class="temp">{{ temp | number:'1.0-0' }}°</div>
+        </div>
+
+        <div class="weather-animation">
+          <lottie-player *ngIf="isClear" src="/assets/lottie/sunny.json" bg="transparent" speed="1"
+            style="width:82px;height:82px;" loop autoplay></lottie-player>
+
+          <lottie-player *ngIf="isCloudy" src="/assets/lottie/cloudy.json" bg="transparent" speed="1"
+            style="width:82px;height:82px;" loop autoplay></lottie-player>
+
+          <lottie-player *ngIf="isRain" src="/assets/lottie/Rainy.json" bg="transparent" speed="1"
+            style="width:82px;height:82px;" loop autoplay></lottie-player>
+
+          <lottie-player *ngIf="isStorm" src="/assets/lottie/thunderstorm.json" bg="transparent" speed="1"
+            style="width:82px;height:82px;" loop autoplay></lottie-player>
+        </div>
+      </div>
+
+      <p class="advice">{{ farmingAdvice }}</p>
+    </section>
+
+    <div *ngIf="!weather" class="loading">Memuat cuaca...</div>
+
+    <!-- GOJEK STYLE MENU -->
+    <section class="gojek-menu animate-slide-up">
+      <div class="menu-item" (click)="goTo('/statistik')" (mouseenter)="toggleIcon('stat', true)"
+        (mouseleave)="toggleIcon('stat', false)">
+        <div class="menu-icon">
+          <ion-icon [name]="icons.stat"></ion-icon>
+        </div>
+        <span>Statistik</span>
+      </div>
+
+      <div class="menu-item" (click)="goTo('/catatan-hama')" (mouseenter)="toggleIcon('note', true)"
+        (mouseleave)="toggleIcon('note', false)">
+        <div class="menu-icon">
+          <ion-icon [name]="icons.note"></ion-icon>
+        </div>
+        <span>Catatan Hama</span>
+      </div>
+    </section>
+
+    <!-- 📊 INFORMASI PERTANIAN -->
+    <section class="card-block animate-fade-in">
+      <div class="card-title">
+        <ion-icon name="leaf-outline"></ion-icon>
+        <h3>Informasi Pertanian</h3>
+      </div>
+      <ul>
+        <li>
+          <b>Pupuk Rekomendasi Minggu Ini</b>
+          <p>NPK 16-16-16 untuk fase vegetatif (7–21 HST).</p>
+        </li>
+        <li>
+          <b>Kelembapan Tanah Ideal</b>
+          <p>55–65% untuk menjaga pertumbuhan optimal.</p>
+        </li>
+        <li>
+          <b>Harga Komoditas</b>
+          <p>📈 Beras Rp12.300 | Jagung Rp6.900 | Cabai Rp48.500</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 🐛 PENGENDALIAN HAMA -->
+    <section class="card-block animate-fade-in">
+      <div class="card-title">
+        <ion-icon name="bug-outline"></ion-icon>
+        <h3>Pengendalian Hama</h3>
+      </div>
+      <ul>
+        <li>
+          <b>Ulat Grayak (Spodoptera)</b>
+          <p>Gunakan feromon + insektisida klorpirifos sore hari.</p>
+        </li>
+        <li>
+          <b>Wereng Coklat</b>
+          <p>Monitoring rutin & semprot imidakloprid jika populasi tinggi.</p>
+        </li>
+        <li>
+          <b>Kutu Daun</b>
+          <p>Neem oil & introduksi predator alami (kumbang koksi).</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 🚜 REKOMENDASI AKTIVITAS -->
+    <section class="card-block animate-fade-in">
+      <div class="card-title">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <h3>Aktivitas Rekomendasi</h3>
+      </div>
+      <ul>
+        <li>Periksa kondisi tanah pada pagi hari</li>
+        <li>Lakukan pengamatan hama seminggu 2–3 kali</li>
+        <li>Gunakan pestisida sesuai anjuran & dosis aman</li>
+        <li>Pastikan GPS aktif untuk pemetaan lahan</li>
+      </ul>
+    </section>
+
+  </div>
+</ion-content>
