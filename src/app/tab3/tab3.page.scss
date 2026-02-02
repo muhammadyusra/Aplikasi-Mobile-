@@ -1,0 +1,28 @@
+.hama-title {
+  color: var(--ion-color-primary);
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 80px;
+  color: #777;
+}
+
+.empty-state ion-icon {
+  font-size: 54px;
+  color: var(--ion-color-primary);
+  margin-bottom: 12px;
+}
+
+.foto-wrapper {
+  margin-bottom: 12px;
+}
+
+.foto-hama {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}

@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Catatan Hama</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- JIKA DATA ADA -->
+  <ion-card *ngFor="let item of dataHama">
+
+    <!-- FOTO HAMA -->
+    <img
+      *ngIf="item.foto"
+      [src]="apiFoto + item.foto"
+      alt="Foto Hama"
+      style="
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+      "
+    />
+
+    <ion-card-header>
+      <ion-card-title class="hama-title">
+        {{ item.hama }}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{ item.tanaman }} • {{ item.tanggal }}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label><b>Umur Tanaman</b></ion-label>
+          <ion-note slot="end">{{ item.umur }} hari</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><b>Tingkat Serangan</b></ion-label>
+          <ion-note slot="end">{{ item.tingkat }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><b>Gejala</b></ion-label>
+          <ion-note slot="end">{{ item.gejala }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><b>Keterangan</b></ion-label>
+          <ion-note slot="end">{{ item.keterangan || '-' }}</ion-note>
+        </ion-item>
+      </ion-list>
+
+      <ion-button
+        color="danger"
+        fill="outline"
+        size="small"
+        expand="block"
+        (click)="hapus(item.id)">
+        <ion-icon name="trash" slot="start"></ion-icon>
+        Hapus Data
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <!-- JIKA DATA KOSONG -->
+  <div *ngIf="dataHama.length === 0" class="empty-state">
+    <ion-icon name="create-outline"></ion-icon>
+    <h3>Belum Ada Data Pengamatan</h3>
+    <p>Silakan tambahkan data hama melalui menu Input Hama</p>
+
+    <ion-button
+      routerLink="/tabs/tab2"
+      color="primary"
+      fill="outline">
+      Tambah Data
+    </ion-button>
+  </div>
+
+</ion-content>

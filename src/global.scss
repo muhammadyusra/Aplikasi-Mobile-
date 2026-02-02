@@ -25,20 +25,6 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/* Core Ionic CSS */
-@import "@ionic/angular/css/core.css";
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-
-/* Optional utilities */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
-@import "@ionic/angular/css/display.css";
-
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -48,86 +34,4 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
-
-/* Peta */
-@import "leaflet/dist/leaflet.css";
-@import "leaflet-draw/dist/leaflet.draw.css";
-
-
-.leaflet-container {
-    height: 100%;
-    width: 100%;
-}
-
-
-/* ===== Warna Hijau Elegan (aktif) ===== */
-ion-tab-bar {
-    --color-selected: #29b765;
-    /* hijau elegan */
-}
-
-/* ===== Hover efek (web) ===== */
-ion-tab-button:hover {
-    --color: #29b765 !important;
-    transform: scale(1.05);
-    transition: 0.2s;
-}
-
-/* ===== Icon & Label saat aktif ===== */
-ion-tab-button.tab-selected {
-    color: #29b765 !important;
-}
-
-ion-tab-button.tab-selected ion-icon,
-ion-tab-button.tab-selected ion-label {
-    color: #29b765 !important;
-}
-
-:root {
-    --my-green: #4caf50;
-}
-
-:root {
-    --ion-font-family: 'Poppins', sans-serif;
-    font-family: var(--ion-font-family);
-}
-
-
-/* Hapus shadow bawaan header di Ionic */
-ion-header {
-    --background: #ffffff;
-    --border-width: 0px;
-    box-shadow: none;
-}
-
-ion-header::part(native) {
-    box-shadow: none;
-    border-bottom: 0;
-}
-
-/* Ukuran ikon Font Awesome di tab */
-ion-tab-button i.fa-solid {
-    font-size: 20px;
-    /* ganti sesuai kebutuhan */
-    display: block;
-    margin-bottom: 2px;
-    /* beri jarak dari label */
-}
-
-/* Warna ikon saat tab aktif */
-ion-tab-button.tab-selected i.fa-solid {
-    color: #29b765 !important;
-}
-
-@keyframes iosFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+@import "@ionic/angular/css/palettes/dark.system.css";

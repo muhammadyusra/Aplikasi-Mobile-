@@ -1,13 +1,7 @@
 {
-  "name": "pertanianApp",
-  "type": "angular-standalone",
+  "name": "agrihama",
   "integrations": {
     "capacitor": {}
   },
-  "proxies": [
-    {
-      "path": "/api",
-      "proxyUrl": "https://yusra.perangkatlunak.my.id/backend/api"
-    }
-  ]
+  "type": "angular"
 }

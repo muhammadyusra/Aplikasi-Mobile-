@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Input Hama</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card class="form-card">
+    <ion-card-header>
+      <ion-card-title>Form Pengamatan Hama</ion-card-title>
+      <ion-card-subtitle>Isi data pengamatan secara lengkap</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <!-- TANGGAL -->
+      <ion-item>
+        <ion-label position="stacked">Tanggal Pengamatan</ion-label>
+        <ion-datetime
+          presentation="date"
+          name="tanggal"
+          [(ngModel)]="formHama.tanggal">
+        </ion-datetime>
+      </ion-item>
+
+      <!-- JENIS TANAMAN -->
+      <ion-item>
+        <ion-label position="stacked">Jenis Tanaman</ion-label>
+        <ion-select
+          interface="action-sheet"
+          placeholder="Pilih tanaman"
+          name="tanaman"
+          [(ngModel)]="formHama.tanaman">
+          <ion-select-option value="Padi">Padi</ion-select-option>
+          <ion-select-option value="Jagung">Jagung</ion-select-option>
+          <ion-select-option value="Kedelai">Kedelai</ion-select-option>
+          <ion-select-option value="Cabai">Cabai</ion-select-option>
+          <ion-select-option value="Tomat">Tomat</ion-select-option>
+          <ion-select-option value="Sayuran">Sayuran</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- UMUR TANAMAN -->
+      <ion-item>
+        <ion-label position="stacked">Umur Tanaman (hari)</ion-label>
+        <ion-input
+          type="number"
+          placeholder="Contoh: 30"
+          name="umur"
+          [(ngModel)]="formHama.umur">
+        </ion-input>
+      </ion-item>
+
+      <!-- JENIS HAMA -->
+      <ion-item>
+        <ion-label position="stacked">Jenis Hama</ion-label>
+        <ion-select
+          interface="action-sheet"
+          placeholder="Pilih hama"
+          name="hama"
+          [(ngModel)]="formHama.hama">
+          <ion-select-option value="Wereng">Wereng</ion-select-option>
+          <ion-select-option value="Ulat">Ulat</ion-select-option>
+          <ion-select-option value="Penggerek Batang">Penggerek Batang</ion-select-option>
+          <ion-select-option value="Tungau">Tungau</ion-select-option>
+          <ion-select-option value="Kutu Daun">Kutu Daun</ion-select-option>
+          <ion-select-option value="Belalang">Belalang</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- TINGKAT SERANGAN -->
+      <ion-item>
+        <ion-label position="stacked">Tingkat Serangan</ion-label>
+        <ion-select
+          placeholder="Pilih tingkat"
+          name="tingkat"
+          [(ngModel)]="formHama.tingkat">
+          <ion-select-option value="Ringan">Ringan</ion-select-option>
+          <ion-select-option value="Sedang">Sedang</ion-select-option>
+          <ion-select-option value="Berat">Berat</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- GEJALA -->
+      <ion-item>
+        <ion-label position="stacked">Gejala Serangan</ion-label>
+        <ion-textarea
+          rows="3"
+          placeholder="Contoh: Daun menguning dan berlubang"
+          name="gejala"
+          [(ngModel)]="formHama.gejala">
+        </ion-textarea>
+      </ion-item>
+
+      <!-- KETERANGAN -->
+      <ion-item>
+        <ion-label position="stacked">Keterangan</ion-label>
+        <ion-textarea
+          rows="3"
+          placeholder="Catatan tambahan (opsional)"
+          name="keterangan"
+          [(ngModel)]="formHama.keterangan">
+        </ion-textarea>
+      </ion-item>
+
+      <!-- UPLOAD FOTO -->
+      <ion-button expand="block" color="medium" (click)="ambilFoto()">
+        <ion-icon name="camera" slot="start"></ion-icon>
+        Ambil Foto
+      </ion-button>
+
+      <!-- PREVIEW FOTO -->
+      <img
+        *ngIf="previewFoto"
+        [src]="previewFoto"
+        style="width:100%; margin-top:10px; border-radius:10px;"
+      />
+
+      <!-- SUBMIT -->
+      <ion-button
+        expand="block"
+        color="primary"
+        class="submit-btn"
+        [disabled]="!formHama.tanggal || !formHama.tanaman || !formHama.hama"
+        (click)="simpan()">
+        Simpan Data
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

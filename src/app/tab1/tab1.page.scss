@@ -1,0 +1,89 @@
+/* =========================
+   HEADER HOME
+========================= */
+.home-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--ion-color-dark);
+}
+
+.home-header p {
+  font-size: 14px;
+  color: var(--ion-color-medium);
+}
+
+/* =========================
+   SUMMARY CARD
+========================= */
+.summary-card {
+  text-align: center;
+  border-radius: 12px;
+}
+
+.summary-card ion-card-content {
+  padding: 18px 10px;
+}
+
+.summary-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ion-color-primary);
+}
+
+.summary-card p {
+  font-size: 13px;
+  margin-top: 6px;
+  color: var(--ion-color-medium);
+}
+
+/* =========================
+   EDUKASI CARD
+========================= */
+.edukasi-card ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+.edukasi-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.edukasi-card p {
+  font-size: 13px;
+  color: var(--ion-color-medium);
+}
+
+/* =========================
+   CARD UMUM
+========================= */
+ion-card {
+  border-radius: 14px;
+}
+
+ion-card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =========================
+   TIPS LIST
+========================= */
+.tips-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.tips-card li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--ion-color-dark);
+}

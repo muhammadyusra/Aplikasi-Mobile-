@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Agricare</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- HEADER -->
+  <div class="home-header">
+    <h1>Selamat Datang Sobat Hijau</h1>
+    <p>Pencatatan dan pemantauan hama tanaman secara digital</p>
+  </div>
+
+  <!-- RINGKASAN DATA -->
+  <ion-col size="6">
+    <ion-card class="summary-card">
+      <ion-card-content>
+        <h2>{{ totalPengamatan }}</h2>
+        <p>Total Pengamatan</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+
+  <ion-col size="6">
+    <ion-card class="summary-card">
+      <ion-card-content>
+        <h2>{{ totalJenisHama }}</h2>
+        <p>Jenis Hama</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+
+<!-- EDUKASI PENANGANAN HAMA -->
+<ion-card class="edukasi-card">
+  <ion-card-header>
+    <ion-card-title>Edukasi Penanganan Hama</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-item lines="none">
+      <ion-icon name="bug" slot="start" color="danger"></ion-icon>
+      <ion-label>
+        <h3>Apa itu Hama?</h3>
+        <p>
+          Hama adalah organisme yang dapat merusak tanaman dan menurunkan
+          hasil produksi pertanian.
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="leaf" slot="start" color="success"></ion-icon>
+      <ion-label>
+        <h3>Pengendalian Alami</h3>
+        <p>
+          Menggunakan musuh alami hama atau tanaman penangkal untuk
+          mengurangi populasi hama.
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="shield-checkmark" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <h3>Pengendalian Terpadu</h3>
+        <p>
+          Menggabungkan teknik mekanis, biologis, dan kimia secara
+          bijaksana dan berkelanjutan.
+        </p>
+      </ion-label>
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>
+
+  <!-- TENTANG APLIKASI -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tentang AgriHama</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      AgriHama adalah aplikasi pertanian yang membantu petani dan
+      pengelola lahan dalam mencatat, memonitor, serta menganalisis
+      serangan hama berdasarkan lokasi dan waktu pengamatan.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- TIPS PERTANIAN -->
+  <ion-card class="tips-card">
+    <ion-card-header>
+      <ion-card-title>Tips Pertanian 🌾</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ul>
+        <li>Lakukan pengamatan hama secara rutin</li>
+        <li>Catat jenis dan jumlah hama dengan akurat</li>
+        <li>Gunakan data untuk menentukan tindakan pengendalian</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
